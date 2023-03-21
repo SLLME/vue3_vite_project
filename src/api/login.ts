@@ -18,6 +18,7 @@ export function logout() {
   })
 }
 
+/** 获取所有用户 */
 export function getAllUsers() {
   return request({
     url: '/user/getAllUsers',
@@ -25,6 +26,7 @@ export function getAllUsers() {
   })
 }
 
+/** 新增用户 */
 export function addUser(data: any) {
   return request({
     url: '/user/addUser',
@@ -33,6 +35,7 @@ export function addUser(data: any) {
   })
 }
 
+/** 删除用户 */
 export function deleteUser(data: any) {
   return request({
     url: '/user/deleteUser',
