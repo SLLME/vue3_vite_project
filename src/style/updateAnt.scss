@@ -46,7 +46,16 @@
   justify-content: flex-end;
   align-items: normal;
 }
+
 /** 表单校验提示信息 */
-.ant-form-item-explain-error{
+.ant-form-item-explain-error {
   font-size: 12px;
+}
+
+/** 下拉菜单样式修改 */
+.ant-dropdown-menu {
+  border-radius: 10px;
+}
+.ant-dropdown-menu-title-content:hover {
+  color: #EF856D;
 }

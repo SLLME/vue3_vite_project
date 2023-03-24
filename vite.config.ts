@@ -44,10 +44,47 @@ export default defineConfig(({command, mode }) => {
       //   ],
       // }),
     ],
+    optimizeDeps: {
+      include: [
+        'vue',
+        'element-plus/es',
+        'element-plus/es/components/form/style/index',
+        'element-plus/es/components/radio-group/style/index',
+        'element-plus/es/components/radio/style/index',
+        'element-plus/es/components/checkbox/style/index',
+        'element-plus/es/components/checkbox-group/style/index',
+        'element-plus/es/components/switch/style/index',
+        'element-plus/es/components/time-picker/style/index',
+        'element-plus/es/components/date-picker/style/index',
+        'element-plus/es/components/col/style/index',
+        'element-plus/es/components/form-item/style/index',
+        'element-plus/es/components/alert/style/index',
+        'element-plus/es/components/breadcrumb/style/index',
+        'element-plus/es/components/select/style/index',
+        'element-plus/es/components/input/style/index',
+        'element-plus/es/components/breadcrumb-item/style/index',
+        'element-plus/es/components/tag/style/index',
+        'element-plus/es/components/pagination/style/index',
+        'element-plus/es/components/table/style/index',
+        'element-plus/es/components/table-column/style/index',
+        'element-plus/es/components/card/style/index',
+        'element-plus/es/components/row/style/index',
+        'element-plus/es/components/button/style/index',
+        'element-plus/es/components/menu/style/index',
+        'element-plus/es/components/sub-menu/style/index',
+        'element-plus/es/components/menu-item/style/index',
+        'element-plus/es/components/option/style/index',
+        'element-plus/es/components/base/style/css',
+        'element-plus/es/components/table-v2/style/css',
+        '@element-plus/icons-vue',
+        'pinia',
+        'axios',
+        'vue-router',
+        '@vueuse/core',
+      ],
+    },
     base: './',
     build: {
-      // 无意义，还是需要在f12中手动引入当前文件路径，才能正常debugger
-      // sourcemap: true,
     },
     resolve: {
       alias: {
@@ -60,18 +97,11 @@ export default defineConfig(({command, mode }) => {
       hmr: true,
       host: "0.0.0.0",
       proxy: {
-        // "/dev-api": {
-        //   target: "http://127.0.0.1:8089",
-        //   changeOrigin: true,
-        //   rewrite(path) {
-        //     return path.replace(/^\/dev-api/, "")
-        //   },
-        // },
-        "/gongan-api": {
-          target: 'https://vat.zzhcn.net',
+        [env.VITE_APP_BASE_API]: {
+          target: env.VITE_APP_BAG_INTERFACE_PORT,
           changeOrigin: true,
           rewrite(path) {
-            return path.replace(/^\/gongan-api/, "/gongan-api")
+            return path.replace(`/^${env.VITE_APP_BASE_API}/`, env.VITE_APP_BASE_API)
           },
         }
       }

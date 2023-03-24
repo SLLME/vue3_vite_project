@@ -362,13 +362,4 @@ const doRerequest = async (row: ObjectModel) => {
 :deep(.ant-form) {
   margin-bottom: 10px;
 }
-
-.pagination-container {
-  text-align: right;
-  padding: 10px 20px;
-}
-
-:deep(.el-table-v2__overlay) {
-  display: v-bind('display');
-}
 </style>

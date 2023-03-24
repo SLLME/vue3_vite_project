@@ -290,15 +290,8 @@ const closeModel = () => {
 
 </script>
 
-<style scoped lang="scss">:deep(.ant-form) {
+<style scoped lang="scss">
+:deep(.ant-form) {
   margin-bottom: 10px;
 }
-
-.pagination-container {
-  text-align: right;
-  padding: 10px 20px;
-}
-
-:deep(.el-table-v2__overlay) {
-  display: v-bind('display');
-}</style>
+</style>

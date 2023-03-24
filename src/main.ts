@@ -2,7 +2,8 @@ import { createApp, App as VueApp } from 'vue'
 import App from './App.vue'
 
 import "./style/index.scss"
-import "ant-design-vue/dist/antd.css"  // vite css
+// import "ant-design-vue/dist/antd.css"  // ant css
+import 'ant-design-vue/dist/antd.variable.min.css' // ant CSS Variable
 import 'element-plus/dist/index.css'
 
 import "nprogress/nprogress.css"; // 路由加载进度条
@@ -41,6 +42,9 @@ const IconFont = createFromIconfontCN({
 /** 使用pinia */
 import { createPinia } from 'pinia'
 
+/** 使用国际化 */
+import i18n from './i18n'
+
 import ElementPlus from "element-plus"
 
 const app = createApp(App);
@@ -54,4 +58,5 @@ app.use(Antd);
 app.use(ElementPlus);
 app.use(createPinia());
 app.use(loadingAnimation);
+app.use(i18n);
 app.mount("#app");

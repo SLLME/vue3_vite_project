@@ -2,7 +2,9 @@
   <el-table-v2 :columns="columns" :data="data" :width="tableWidth" :height="tableHeight" fixed>
     <template #overlay>
       <div class="overlay-container" v-show="tableLoading">
-        <Space><Spin size="large" /></Space>
+        <Space>
+          <Spin size="large" />
+        </Space>
       </div>
     </template>
   </el-table-v2>
@@ -22,7 +24,7 @@ const props = defineProps({
     default: []
   },
   data: {
-    type: Array, 
+    type: Array,
     default: []
   },
   tableLoading: {
@@ -71,14 +73,22 @@ const onCheckChange = (rowData: any) => {
     allSelect.value = all;
   }
 
-
 }
-defineExpose({
-    onCheckAllChange, // 全选事件
-    onCheckChange,  // 单选事件
-    allSelect, // 全选状态
-    indeterminate // 全选框
+/** 表格加载 */
+var display = computed(() => {
+    console.log(props.tableLoading)
+    return props.tableLoading ? "block" : 'none'
   })
+defineExpose({
+  onCheckAllChange, // 全选事件
+  onCheckChange,  // 单选事件
+  allSelect, // 全选状态
+  indeterminate // 全选框
+})
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+:deep(.el-table-v2__overlay) {
+  display: v-bind('display');
+}
+</style>
