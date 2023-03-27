@@ -14,7 +14,7 @@ import rightLogin from './components/rightLogin.vue';
 .login-container {
   width: 100%;
   height: 100%;
-  min-width: 1158px;
+  // min-width: 1158px;
   display: flex;
   justify-content: space-around;
   /** 字体无法选中 */

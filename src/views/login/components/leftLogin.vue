@@ -50,8 +50,10 @@ const handleClickHead = (index: number) => {
 
     img {
       // position: absolute;
-      width: 128px;
-      margin: 20px;
+      // width: 128px;
+      // margin: 20px;
+      width: 20%;
+      margin: 2%;
       border-radius: 50%;
       cursor: pointer;
       // top: 0;
@@ -62,6 +64,12 @@ const handleClickHead = (index: number) => {
     .select-img {
       border: 9px solid #ff8d00;
     }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .login-left{
+    display: none!important;
   }
 }
 </style>

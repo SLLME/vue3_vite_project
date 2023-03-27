@@ -11,10 +11,8 @@
 </template>
 
 <script setup lang="ts" name="LTable">
-import { ObjectModel } from "@/api/model/objectModel";
 
 import { calcTableHeight } from "@/utils/index"
-import { defineProps, defineExpose } from "vue";
 
 import { Space, Spin } from "ant-design-vue";
 

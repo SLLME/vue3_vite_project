@@ -1,7 +1,7 @@
 <template>
   <div class="pagination-container" v-show="total">
     <Pagination :current="page" :total="total" :pageSize="pageSize" :pageSizeOptions="pageSizeOptions"
-      :show-total="total => `${total}条`" show-quick-jumper @change="paginationChange" @showSizeChange="showSizeChange">
+      :show-total="total => `共${total}条`" show-quick-jumper @change="paginationChange" @showSizeChange="showSizeChange">
       <template #buildOptionText="props">
         <span>{{ props.value }} 条/页</span>
       </template>
@@ -11,7 +11,6 @@
 
 <script setup lang="ts" name="myPagination">
 import { Pagination } from 'ant-design-vue';
-import { defineProps, defineEmits } from 'vue';
 
 defineProps({
   page: {

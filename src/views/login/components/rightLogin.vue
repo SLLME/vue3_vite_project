@@ -3,8 +3,8 @@
     <div class="login-right-container">
       <form onsubmit="return false;" class="login-form">
         <div class="login-title">船新版本欢迎体验</div>
-          <input type="text" placeholder="账号" class="form-input" v-model="loginParams.username" />
-          <input type="password" placeholder="密码" class="form-input" v-model="loginParams.password" />
+        <input type="text" placeholder="账号" class="form-input" v-model="loginParams.username" />
+        <input type="password" placeholder="密码" class="form-input" v-model="loginParams.password" />
         <button class="form-button" @click="handleLogin">
           SIGN UP
         </button>
@@ -31,14 +31,14 @@ const loginParams = reactive<LoginParams>({
   password: 'Zsmm!@#64'
 })
 const handleLogin = async () => {
-  if(!loginParams.username){
+  if (!loginParams.username) {
     return;
   }
-  if(!loginParams.password){
+  if (!loginParams.password) {
     return;
   }
   let res: ResponseData = await main.login(loginParams);
-  if(res.errcode == 0){
+  if (res.errcode == 0) {
     userRouter.push("/invoiceRequest")
   }
 }
@@ -53,11 +53,13 @@ const handleLogin = async () => {
   justify-content: center;
 
   .login-right-container {
-    width: 480px;
+    width: 60%;
+    min-width: 380px;
     height: 320px;
     padding: 25px;
     background-color: #ecf0f3;
     box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
+    box-shadow: 0 0 10px 10px #d1d9e6;
     border-radius: 12px;
     position: relative;
     overflow: hidden;
@@ -69,6 +71,7 @@ const handleLogin = async () => {
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      width: 100%;
 
       .login-title {
         font-size: 20px;
@@ -79,7 +82,7 @@ const handleLogin = async () => {
     }
 
     .form-input {
-      width: 350px;
+      width: 80%;
       height: 40px;
       margin: 4px 0;
       padding-left: 25px;
@@ -149,4 +152,36 @@ const handleLogin = async () => {
     }
   }
 }
-</style>
+
+@media only screen and (max-width: 800px) {
+  .login-title {
+    font-size: 14px !important;
+  }
+
+  .form-button {
+    width: 140px !important;
+    height: 35px !important;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1500px) {
+  .login-title {
+    font-size: 16px !important;
+  }
+
+  .form-button {
+    width: 150px !important;
+    height: 38px !important;
+  }
+}
+
+@media only screen and (min-width: 1500px) and (max-width: 1920px) {
+  .login-title {
+    font-size: 18px !important;
+  }
+
+  .form-button {
+    width: 160px !important;
+    height: 40px !important;
+  }
+}</style>
