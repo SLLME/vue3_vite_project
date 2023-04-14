@@ -19,7 +19,7 @@ import router from './router'
 import "./permission"
 
 
-import loadingAnimation from "@/components/loadingAnimation/index"
+import loadingAnimation from "@/components/LoadingAnimation/index"
 
 type Loading = {
   show: ()=> void,
@@ -47,7 +47,12 @@ import i18n from './i18n'
 
 import ElementPlus from "element-plus"
 
+import { setupGlobDirectives } from './directive'
+
 const app = createApp(App);
+
+/** 绑定全局自定义指令 */
+setupGlobDirectives(app);
 
 app.component("IconFont", IconFont);
 

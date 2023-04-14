@@ -42,6 +42,24 @@ let routes = [
         component: () => import('../views/uploadVehicleInvoice/index.vue'),
         meta: { title: '上传的机动车发票' }
       },
+      {
+        path: '/slot',
+        name: 'slot',
+        component: () => import('../views/test/slot/slotA.vue'),
+        meta: { title: '插槽' }
+      },
+      {
+        path: '/depInject',
+        name: 'depInject',
+        component: () => import('../views/test/depInject/index.vue'),
+        meta: { title: '依赖注入' }
+      },
+      {
+        path: '/directive',
+        name: 'directive',
+        component: () => import('../views/test/directive/index.vue'),
+        meta: { title: '指令' }
+      },
     ]
   },
   {
